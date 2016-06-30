@@ -110,7 +110,7 @@ public class Tagging extends Service {
         conn.close(); 
         // putResult
         JSONObject putResultJson = new JSONObject();
-        HttpResponse putResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_OK);
+        HttpResponse putResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_CREATED);
         return putResult; 
     }catch(Exception e){  
         e.printStackTrace();
