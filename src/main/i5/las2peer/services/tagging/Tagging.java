@@ -107,7 +107,8 @@ public class Tagging extends Service {
         JSONObject putResultJson = new JSONObject();
         HttpResponse putResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_OK);
         return putResult; 
-    }catch(Exception e){ 
+    }catch(Exception e){  
+        e.printStackTrace();
         HttpResponse errorResult = new HttpResponse("Internal Error: " + e.getMessage(), HttpURLConnection.HTTP_OK);
         return errorResult;  
     }
