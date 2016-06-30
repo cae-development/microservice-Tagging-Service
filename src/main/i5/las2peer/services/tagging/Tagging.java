@@ -98,7 +98,7 @@ public class Tagging extends Service {
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {
-       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "putResult")
+       @ApiResponse(code = HttpURLConnection.HTTP_CREATED, message = "putResult")
   })
   @ApiOperation(value = "putComment", notes = " ")
   public HttpResponse putComment() {
