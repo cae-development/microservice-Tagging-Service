@@ -103,8 +103,8 @@ public class Tagging extends Service {
   @ApiOperation(value = "putComment", notes = " ")
   public HttpResponse putComment() {
     try{
-    // putResult
-    JSONObject putResultJson = new JSONObject();
+        // putResult
+        JSONObject putResultJson = new JSONObject();
         HttpResponse putResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_OK);
         return putResult; 
     }catch(Exception e){ 
