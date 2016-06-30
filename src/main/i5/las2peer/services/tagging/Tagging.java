@@ -103,7 +103,7 @@ public class Tagging extends Service {
   @ApiOperation(value = "getComments", notes = " ")
   public HttpResponse getComments() {
 
-  JSONArray array = new JSONArray();
+    JSONArray array = new JSONArray();
     Connection conn = null;
     try {
         conn = dbm.getConnection();
