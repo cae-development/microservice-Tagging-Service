@@ -20,7 +20,8 @@ import i5.las2peer.restMapper.MediaType;
 import i5.las2peer.restMapper.RESTMapper;
 import i5.las2peer.restMapper.annotations.ContentParam;
 import i5.las2peer.restMapper.annotations.Version;
-
+import i5.las2peer.services.tagging.database.DatabaseManager;
+import java.sql.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -59,13 +60,23 @@ import org.json.simple.JSONArray;
 public class Tagging extends Service {
 
 
+  /*
+   * Database configuration
+   */
+  private String jdbcDriverClassName;
+  private String jdbcLogin;
+  private String jdbcPass;
+  private String jdbcUrl;
+  private String jdbcSchema;
+  private DatabaseManager dbm;
 
 
 
   public Tagging() {
     // read and set properties values
     setFieldValues();
-
+    // instantiate a database manager to handle database connection pooling and credentials
+    dbm = new DatabaseManager(jdbcDriverClassName, jdbcLogin, jdbcPass, jdbcUrl, jdbcSchema);
   }
 
   // //////////////////////////////////////////////////////////////////////////////////////
