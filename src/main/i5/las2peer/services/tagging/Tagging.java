@@ -109,7 +109,7 @@ public class Tagging extends Service {
         return putResult; 
     }catch(Exception e){ 
         HttpResponse errorResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_OK);
-        return putResult;  
+        return errorResult;  
     }
     
   }
