@@ -94,7 +94,7 @@ public class Tagging extends Service {
    * 
    */
   @PUT
-  @Path("/comments")
+  @Path("/comments/{id}")
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {
