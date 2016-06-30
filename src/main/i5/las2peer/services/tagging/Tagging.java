@@ -103,14 +103,28 @@ public class Tagging extends Service {
   @ApiOperation(value = "getComments", notes = " ")
   public HttpResponse getComments() {
 
-    // comments
-    boolean comments_condition = true;
-    if(comments_condition) {
-      JSONObject commentsJson = new JSONObject();
-      HttpResponse comments = new HttpResponse(commentsJson.toJSONString(), HttpURLConnection.HTTP_OK);
-      return comments;
-    }
-    return null;
+  JSONArray array = new JSONArray();
+    Connection conn = null;
+    try {
+        conn = dbm.getConnection();
+        PreparedStatement statement = conn.prepareStatement("Select * from images limit 10");
+        ResultSet result = statement.executeQuery();
+        while (result.next()) { 
+            JSONObject imageJson = new JSONObject(); 
+            imageJson.put("id",result.getInt("id")); 
+            imageJson.put("url",result.getString("url"));
+            array.add(imageJson);
+        }
+        resultJson.put("images", array);
+        conn.close();
+
+        HttpResponse imageResult = new HttpResponse(resultJson.toJSONString(), HttpURLConnection.HTTP_OK);
+        return imageResult;
+      } catch (Exception e) {
+        e.printStackTrace();
+        HttpResponse errorResult = new HttpResponse("Internal Error", HttpURLConnection.HTTP_INTERNAL_ERROR);
+        return errorResult;
+      }
   }
 
 
