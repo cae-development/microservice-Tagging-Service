@@ -1,12 +1,12 @@
 --
--- Database Schema:  tags 
+-- Database Schema:  cae-schema 
 -- Automatically generated sql script for the service Tagging Service, created by the CAE.
 -- --------------------------------------------------------
 
 --
 -- Table structure for table comments.
 --
-CREATE TABLE `tags`.`comments` (
+CREATE TABLE `cae-schema`.`comments` (
   imgId int ,
   id int ,
   comment text ,

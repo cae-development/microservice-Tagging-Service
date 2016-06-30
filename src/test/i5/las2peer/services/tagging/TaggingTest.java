@@ -112,7 +112,7 @@ public class TaggingTest {
 
       c.setLogin(Long.toString(testAgent.getId()), testPass);
       @SuppressWarnings("unchecked")
-      ClientResponse result = c.sendRequest("PUT", mainPath + "/", "",
+      ClientResponse result = c.sendRequest("PUT", mainPath + "/comments", "",
         MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON, new Pair[] {});
       assertTrue(true); // change here
       System.out.println("Result of 'testputComment': " + result.getResponse().trim());
