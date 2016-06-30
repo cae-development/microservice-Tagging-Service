@@ -88,7 +88,7 @@ public class Tagging extends Service {
    * 
    * putComment
    * 
-   *
+   * @param id a String 
    * 
    * @return HttpResponse  
    * 
@@ -101,7 +101,7 @@ public class Tagging extends Service {
        @ApiResponse(code = HttpURLConnection.HTTP_CREATED, message = "putResult")
   })
   @ApiOperation(value = "putComment", notes = " ")
-  public HttpResponse putComment() {
+  public HttpResponse putComment(@PathParam("id") String id) {
     Connection conn = null; 
     try{ 
         conn = dbm.getConnection();
