@@ -102,6 +102,7 @@ public class Tagging extends Service {
   })
   @ApiOperation(value = "putComment", notes = " ")
   public HttpResponse putComment() {
+    Connection conn = null; 
     try{ 
         conn = dbm.getConnection();
         PreparedStatement statement = conn.prepareStatement("Insert into images (url) Values ('"+url+"');");
