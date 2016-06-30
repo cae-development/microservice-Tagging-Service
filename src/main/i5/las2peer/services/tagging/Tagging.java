@@ -110,8 +110,8 @@ public class Tagging extends Service {
         PreparedStatement statement = conn.prepareStatement("Select * from comments limit 10");
         ResultSet result = statement.executeQuery();
         while (result.next()) { 
-            JSONObject imageJson = new JSONObject(); 
-            imageJson.put("id",result.getInt("id")); 
+            JSONObject commentJson = new JSONObject(); 
+            commentJson.put("id",result.getInt("id")); 
             imageJson.put("text",result.getString("comment"));
             array.add(imageJson);
         }
