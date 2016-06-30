@@ -107,7 +107,7 @@ public class Tagging extends Service {
     Connection conn = null;
     try {
         conn = dbm.getConnection();
-        PreparedStatement statement = conn.prepareStatement("Select * from images limit 10");
+        PreparedStatement statement = conn.prepareStatement("Select * from comments limit 10");
         ResultSet result = statement.executeQuery();
         while (result.next()) { 
             JSONObject imageJson = new JSONObject(); 
