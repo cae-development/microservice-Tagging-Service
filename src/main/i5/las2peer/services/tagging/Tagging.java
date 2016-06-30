@@ -124,9 +124,6 @@ public class Tagging extends Service {
         HttpResponse errorResult = new HttpResponse("Internal Error", HttpURLConnection.HTTP_INTERNAL_ERROR);
         return errorResult;
       }finally{ 
-       if(conn != null){ 
-            
-        }
       }
   }
 
