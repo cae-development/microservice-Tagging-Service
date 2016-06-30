@@ -115,7 +115,7 @@ public class Tagging extends Service {
             commentJson.put("text",result.getString("comment"));
             array.add(commentJson);
         }
-        commentsJson.put("comments", array);aaaa
+        commentsJson.put("comments", array);
 
         HttpResponse commentsResult = new HttpResponse(commentsJson.toJSONString(), HttpURLConnection.HTTP_OK);
         return commentsResult;
