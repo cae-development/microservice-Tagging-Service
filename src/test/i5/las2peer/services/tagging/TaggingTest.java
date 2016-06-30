@@ -135,7 +135,7 @@ public class TaggingTest {
       String id = "initialized";
       c.setLogin(Long.toString(testAgent.getId()), testPass);
       @SuppressWarnings("unchecked")
-      ClientResponse result = c.sendRequest("GET", mainPath + "/comments", "",
+      ClientResponse result = c.sendRequest("GET", mainPath + "/comments/{id}", "",
         MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON, new Pair[] {});
       assertTrue(true); // change here
       System.out.println("Result of 'testgetComments': " + result.getResponse().trim());
