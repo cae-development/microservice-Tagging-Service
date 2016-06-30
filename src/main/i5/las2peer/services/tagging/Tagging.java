@@ -86,6 +86,35 @@ public class Tagging extends Service {
 
   /**
    * 
+   * putComment
+   * 
+   *
+   * 
+   * @return HttpResponse  
+   * 
+   */
+  @PUT
+  @Path("/")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "putResult")
+  })
+  @ApiOperation(value = "putComment", notes = " ")
+  public HttpResponse putComment() {
+
+    // putResult
+    boolean putResult_condition = true;
+    if(putResult_condition) {
+      JSONObject putResultJson = new JSONObject();
+      HttpResponse putResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_OK);
+      return putResult;
+    }
+    return null;
+  }
+
+  /**
+   * 
    * getComments
    * 
    *
@@ -98,7 +127,7 @@ public class Tagging extends Service {
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {
-       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "comments")
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "commentsResult")
   })
   @ApiOperation(value = "getComments", notes = " ")
   public HttpResponse getComments() {
