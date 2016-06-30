@@ -148,7 +148,7 @@ public class Tagging extends Service {
     Connection conn = null;
     try {
         conn = dbm.getConnection();
-        PreparedStatement statement = conn.prepareStatement("Select * from comments where imgID='"+id+"' ORDERD BY timestamp DESC limit 10");
+        PreparedStatement statement = conn.prepareStatement("Select * from comments where imgID='"+id+"' ORDER BY timestamp DESC limit 10");
         ResultSet result = statement.executeQuery();
         while (result.next()) { 
             JSONObject commentJson = new JSONObject(); 
