@@ -127,7 +127,7 @@ public class Tagging extends Service {
        if(conn != null){ 
             conn.close();
         }
-        }
+      }
   }
 
 
