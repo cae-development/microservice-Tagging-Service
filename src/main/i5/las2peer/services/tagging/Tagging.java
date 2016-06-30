@@ -119,7 +119,7 @@ public class Tagging extends Service {
         conn.close();
 
         HttpResponse commentsResult = new HttpResponse(resultJson.toJSONString(), HttpURLConnection.HTTP_OK);
-        return imageResult;
+        return commentsResult;
       } catch (Exception e) {
         e.printStackTrace();
         HttpResponse errorResult = new HttpResponse("Internal Error", HttpURLConnection.HTTP_INTERNAL_ERROR);
