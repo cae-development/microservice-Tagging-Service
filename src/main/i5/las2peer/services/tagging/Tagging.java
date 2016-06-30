@@ -109,7 +109,7 @@ public class Tagging extends Service {
         return putResult; 
     }catch(Exception e){  
         e.printStackTrace();
-        HttpResponse errorResult = new HttpResponse("Internal Error: " + e.getMessage(), HttpURLConnection.HTTP_OK);
+        HttpResponse errorResult = new HttpResponse("Internal Error: " + e.getMessage(), HttpURLConnection.HTTP_INTERNAL_ERROR);
         return errorResult;  
     }
     
