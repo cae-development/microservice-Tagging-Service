@@ -84,6 +84,35 @@ public class Tagging extends Service {
   // //////////////////////////////////////////////////////////////////////////////////////
 
 
+  /**
+   * 
+   * getComments
+   * 
+   *
+   * 
+   * @return HttpResponse  
+   * 
+   */
+  @GET
+  @Path("/comments")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "comments")
+  })
+  @ApiOperation(value = "getComments", notes = " ")
+  public HttpResponse getComments() {
+
+    // comments
+    boolean comments_condition = true;
+    if(comments_condition) {
+      JSONObject commentsJson = new JSONObject();
+      HttpResponse comments = new HttpResponse(commentsJson.toJSONString(), HttpURLConnection.HTTP_OK);
+      return comments;
+    }
+    return null;
+  }
+
 
 
 
