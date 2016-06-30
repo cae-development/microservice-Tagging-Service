@@ -102,15 +102,12 @@ public class Tagging extends Service {
   })
   @ApiOperation(value = "putComment", notes = " ")
   public HttpResponse putComment() {
-
+    try{
     // putResult
-    boolean putResult_condition = true;
-    if(putResult_condition) {
-      JSONObject putResultJson = new JSONObject();
-      HttpResponse putResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_OK);
-      return putResult;
-    }
-    return null;
+    JSONObject putResultJson = new JSONObject();
+    HttpResponse putResult = new HttpResponse(putResultJson.toJSONString(), HttpURLConnection.HTTP_OK);
+    return putResult;
+    
   }
 
   /**
