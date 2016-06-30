@@ -105,7 +105,7 @@ public class Tagging extends Service {
     Connection conn = null; 
     try{ 
         conn = dbm.getConnection();
-        PreparedStatement statement = conn.prepareStatement("Insert into comments (comment,imgId) Values ('"+url+"');");
+        PreparedStatement statement = conn.prepareStatement("Insert into comments (comment,imgId) Values ('test',2);");
         statement.executeUpdate();
         conn.close(); 
         // putResult
