@@ -88,6 +88,7 @@ public class Tagging extends Service {
    * 
    * putComment
    * 
+   * @param comment a JSONObject 
    * @param id a String 
    * 
    * @return HttpResponse  
@@ -96,12 +97,13 @@ public class Tagging extends Service {
   @PUT
   @Path("/comments/{id}")
   @Produces(MediaType.APPLICATION_JSON)
-  @Consumes(MediaType.TEXT_PLAIN)
+  @Consumes(MediaType.APPLICATION_JSON)
   @ApiResponses(value = {
        @ApiResponse(code = HttpURLConnection.HTTP_CREATED, message = "putResult")
   })
   @ApiOperation(value = "putComment", notes = " ")
-  public HttpResponse putComment(@PathParam("id") String id) {
+  public HttpResponse putComment(@ContentParam String comment, @PathParam("id") String id) {
+    JSONObject comment_JSON = (JSONObject) JSONValue.parse(comment);
     Connection conn = null; 
     try{ 
         conn = dbm.getConnection();

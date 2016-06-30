@@ -109,11 +109,11 @@ public class TaggingTest {
     MiniClient c = new MiniClient();
     c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
     try {
-      String id = "initialized";
+      JSONObject comment = new JSONObject();      String id = "initialized";
       c.setLogin(Long.toString(testAgent.getId()), testPass);
       @SuppressWarnings("unchecked")
-      ClientResponse result = c.sendRequest("PUT", mainPath + "/comments/{id}", "",
-        MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON, new Pair[] {});
+      ClientResponse result = c.sendRequest("PUT", mainPath + "/comments/{id}", comment.toJSONString(),
+        MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON, new Pair[] {});
       assertTrue(true); // change here
       System.out.println("Result of 'testputComment': " + result.getResponse().trim());
     } catch (Exception e) {
