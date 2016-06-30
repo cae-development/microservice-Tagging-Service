@@ -125,7 +125,7 @@ public class Tagging extends Service {
    * 
    * getComments
    * 
-   *
+   * @param id a String 
    * 
    * @return HttpResponse  
    * 
@@ -138,7 +138,7 @@ public class Tagging extends Service {
        @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "commentsResult")
   })
   @ApiOperation(value = "getComments", notes = " ")
-  public HttpResponse getComments() {
+  public HttpResponse getComments(@PathParam("id") String id) {
     JSONObject commentsJson = new JSONObject();
     JSONArray array = new JSONArray();
     Connection conn = null;
