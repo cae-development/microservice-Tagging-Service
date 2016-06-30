@@ -112,7 +112,7 @@ public class Tagging extends Service {
         while (result.next()) { 
             JSONObject imageJson = new JSONObject(); 
             imageJson.put("id",result.getInt("id")); 
-            imageJson.put("text",result.getString(""));
+            imageJson.put("text",result.getString("comment"));
             array.add(imageJson);
         }
         resultJson.put("images", array);
