@@ -10,6 +10,7 @@ CREATE TABLE `cae-schema`.`comments` (
   imgId int ,
   id int NOT NULL AUTO_INCREMENT ,
   comment text ,
+  timestamp datetime ,
 CONSTRAINT id_PK PRIMARY KEY (id)
 );
 
