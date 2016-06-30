@@ -102,7 +102,7 @@ public class Tagging extends Service {
   })
   @ApiOperation(value = "getComments", notes = " ")
   public HttpResponse getComments() {
-
+    JSONObject commentsJson = new JSONObject();
     JSONArray array = new JSONArray();
     Connection conn = null;
     try {
