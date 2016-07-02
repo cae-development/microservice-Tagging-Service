@@ -112,16 +112,17 @@ public class Tagging extends Service {
         //statement.setString(1,(String) comment_JSON.get("text")); 
         statement.setInt(1,Integer.parseInt(id));
         statement.executeUpdate();
-        conn.close(); 
+        conn.close();  
+ 
+        // put
+        JSONObject putResponse = new JSONObject();
+        HttpResponse put = new HttpResponse(putResponse.toJSONString(), HttpURLConnection.HTTP_CREATED);
+        return put; 
     }catch(Exception e){  
        e.printStackTrace();
        HttpResponse error = new HttpResponse("Internal Error: " e.getMessage(), HttpURLConnection.HTTP_INTERNAL_ERROR);
       return error;  
     }
-    // put
-      JSONObject putResponse = new JSONObject();
-      HttpResponse put = new HttpResponse(putResponse.toJSONString(), HttpURLConnection.HTTP_CREATED);
-      return put;
     
   }
 
