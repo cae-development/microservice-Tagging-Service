@@ -121,7 +121,7 @@ public class Tagging extends Service {
         return put; 
     }catch(Exception e){  
        e.printStackTrace();
-       HttpResponse error = new HttpResponse("Internal Error: " e.getMessage(), HttpURLConnection.HTTP_INTERNAL_ERROR);
+       HttpResponse error = new HttpResponse("Internal Error: " + e.getMessage(), HttpURLConnection.HTTP_INTERNAL_ERROR);
       return error;  
     }
     
