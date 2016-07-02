@@ -7,9 +7,9 @@
 -- Table structure for table comments.
 --
 CREATE TABLE `cae-schema`.`comments` (
+  comment text ,
   imgId int ,
   id int NOT NULL AUTO_INCREMENT ,
-  comment text ,
 CONSTRAINT id_PK PRIMARY KEY (id)
 );
 --

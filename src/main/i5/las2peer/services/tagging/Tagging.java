@@ -88,8 +88,9 @@ public class Tagging extends Service {
    * 
    * putTag
    * 
-   * @param tag a JSONObject 
    * @param id a String 
+   * @param tag a JSONObject 
+
    * 
    * @return HttpResponse  
    * 
@@ -103,7 +104,7 @@ public class Tagging extends Service {
        @ApiResponse(code = HttpURLConnection.HTTP_INTERNAL_ERROR, message = "error")
   })
   @ApiOperation(value = "putTag", notes = " ")
-  public HttpResponse putTag(@ContentParam String tag, @PathParam("id") String id) {
+  public HttpResponse putTag(@PathParam("id") String id, @ContentParam String tag) {
     JSONObject tag_JSON = (JSONObject) JSONValue.parse(tag);
     Connection conn = null; 
     try{ 
@@ -141,6 +142,7 @@ public class Tagging extends Service {
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_INTERNAL_ERROR, message = "error"),
        @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "tags")
   })
   @ApiOperation(value = "getTags", notes = " ")
