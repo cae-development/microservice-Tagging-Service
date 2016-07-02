@@ -112,7 +112,10 @@ public class Tagging extends Service {
         //statement.setString(1,(String) comment_JSON.get("text")); 
         statement.setInt(1,Integer.parseInt(id));
         statement.executeUpdate();
-        conn.close();
+        conn.close(); 
+    }catch(Exception e){ 
+         
+    }
     // put
     boolean put_condition = true;
     if(put_condition) {
