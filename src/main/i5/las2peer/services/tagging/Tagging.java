@@ -149,7 +149,7 @@ public class Tagging extends Service {
   public HttpResponse getTags(@PathParam("id") String id) {
     Connection conn = null;
     JSONObject tagsJson = new JSONObject(); 
-    JSONArray array = new JsonArray(); 
+    JSONArray array = new JSONArray(); 
     try {
         conn = dbm.getConnection();
         PreparedStatement statement = conn.prepareStatement("Select * from tags where imgID='?' limit 10"); 
