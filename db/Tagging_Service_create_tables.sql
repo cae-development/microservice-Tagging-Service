@@ -16,6 +16,7 @@ CONSTRAINT id_PK PRIMARY KEY (id)
 -- Table structure for table tags.
 --
 CREATE TABLE `cae-schema`.`tags` (
+  name varchar ,
   imgId int ,
   id int NOT NULL AUTO_INCREMENT ,
 CONSTRAINT id_PK PRIMARY KEY (id)
