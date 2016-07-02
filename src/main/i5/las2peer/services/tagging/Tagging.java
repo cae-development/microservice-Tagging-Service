@@ -105,7 +105,14 @@ public class Tagging extends Service {
   @ApiOperation(value = "putTag", notes = " ")
   public HttpResponse putTag(@ContentParam String tag, @PathParam("id") String id) {
     JSONObject tag_JSON = (JSONObject) JSONValue.parse(tag);
-
+    Connection conn = null; 
+    try{ 
+        conn = dbm.getConnection();
+        PreparedStatement statement = conn.prepareStatement("Insert into comments (comment,imgId) Values (?,?);"); 
+        statement.setString(1,(String) comment_JSON.get("text")); 
+        statement.setInt(2,Integer.parseInt(id));
+        statement.executeUpdate();
+        conn.close();
     // put
     boolean put_condition = true;
     if(put_condition) {
