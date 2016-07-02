@@ -161,12 +161,9 @@ public class Tagging extends Service {
         }
         tagsJson.put("tags", array);
         conn.close();
-    // tags
-    boolean tags_condition = true;
-    if(tags_condition) {
-      JSONObject tagsJson = new JSONObject();
-      HttpResponse tags = new HttpResponse(tagsJson.toJSONString(), HttpURLConnection.HTTP_OK);
-      return tags;
+        JSONObject tagsJson = new JSONObject();
+        HttpResponse tags = new HttpResponse(tagsJson.toJSONString(), HttpURLConnection.HTTP_OK);
+        return tags;
     }
     return null;
   }
