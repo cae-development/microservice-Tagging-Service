@@ -125,14 +125,7 @@ public class Tagging extends Service {
       HttpResponse put = new HttpResponse(putResponse.toJSONString(), HttpURLConnection.HTTP_CREATED);
       return put;
     }
-    // error
-    boolean error_condition = true;
-    if(error_condition) {
-      String errorResponse = "Some String";
-      HttpResponse error = new HttpResponse(errorResponse, HttpURLConnection.HTTP_INTERNAL_ERROR);
-      return error;
-    }
-    return null;
+    
   }
 
   /**
