@@ -113,8 +113,10 @@ public class Tagging extends Service {
         statement.setInt(1,Integer.parseInt(id));
         statement.executeUpdate();
         conn.close(); 
-    }catch(Exception e){ 
-         
+    }catch(Exception e){  
+       e.printStackTrace();
+       HttpResponse error = new HttpResponse("Internal Error: " e.getMessage(), HttpURLConnection.HTTP_INTERNAL_ERROR);
+      return error;  
     }
     // put
     boolean put_condition = true;
