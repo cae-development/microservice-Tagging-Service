@@ -146,18 +146,20 @@ public class Tagging extends Service {
   @ApiOperation(value = "getTags", notes = " ")
   public HttpResponse getTags(@PathParam("id") String id) {
     Connection conn = null;
+    JSONObject tagsJson = new JSONObject(); 
+    JSONArray array = new JsonArray(); 
     try {
         conn = dbm.getConnection();
         PreparedStatement statement = conn.prepareStatement("Select * from tags where imgID='?' limit 10"); 
         statement.setInt(1,Integer.parseInt(id));
         ResultSet result = statement.executeQuery();
         while (result.next()) { 
-            JSONObject commentJson = new JSONObject(); 
-            commentJson.put("id",result.getInt("id")); 
-            commentJson.put("text",result.getString("comment"));
-            array.add(commentJson);
+            JSONObject tagJson = new JSONObject(); 
+            tagJson.put("id",result.getInt("id")); 
+            tagJson.put("name",result.getString("name"));
+            array.add(tagJson);
         }
-        commentsJson.put("comments", array);
+        tagsJson.put("tags", array);
         conn.close();
     // tags
     boolean tags_condition = true;
