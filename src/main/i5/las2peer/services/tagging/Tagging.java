@@ -129,6 +129,35 @@ public class Tagging extends Service {
 
   /**
    * 
+   * getTags
+   * 
+   * @param id a String 
+   * 
+   * @return HttpResponse  
+   * 
+   */
+  @GET
+  @Path("/tags/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "tags")
+  })
+  @ApiOperation(value = "getTags", notes = " ")
+  public HttpResponse getTags(@PathParam("id") String id) {
+
+    // tags
+    boolean tags_condition = true;
+    if(tags_condition) {
+      JSONObject tagsJson = new JSONObject();
+      HttpResponse tags = new HttpResponse(tagsJson.toJSONString(), HttpURLConnection.HTTP_OK);
+      return tags;
+    }
+    return null;
+  }
+
+  /**
+   * 
    * putComment
    * 
    * @param comment a JSONObject 

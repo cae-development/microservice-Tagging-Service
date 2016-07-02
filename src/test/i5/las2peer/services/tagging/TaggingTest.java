@@ -124,6 +124,29 @@ public class TaggingTest {
 
   /**
    * 
+   * Test for the getTags method.
+   * 
+   */
+  @Test
+  public void testgetTags() {
+    MiniClient c = new MiniClient();
+    c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
+    try {
+      String id = "initialized";
+      c.setLogin(Long.toString(testAgent.getId()), testPass);
+      @SuppressWarnings("unchecked")
+      ClientResponse result = c.sendRequest("GET", mainPath + "/tags/{id}", "",
+        MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON, new Pair[] {});
+      assertTrue(true); // change here
+      System.out.println("Result of 'testgetTags': " + result.getResponse().trim());
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+  }
+
+  /**
+   * 
    * Test for the putComment method.
    * 
    */
