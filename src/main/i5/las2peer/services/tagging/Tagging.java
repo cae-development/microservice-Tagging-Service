@@ -152,7 +152,7 @@ public class Tagging extends Service {
     JSONArray array = new JSONArray(); 
     try {
         conn = dbm.getConnection();
-        PreparedStatement statement = conn.prepareStatement("Select * from tags where imgID='?' limit 10"); 
+        PreparedStatement statement = conn.prepareStatement("Select * from tags where imgID=? limit 10"); 
         statement.setInt(1,Integer.parseInt(id));
         ResultSet result = statement.executeQuery();
         while (result.next()) { 
