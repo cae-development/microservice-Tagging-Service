@@ -119,12 +119,9 @@ public class Tagging extends Service {
       return error;  
     }
     // put
-    boolean put_condition = true;
-    if(put_condition) {
       JSONObject putResponse = new JSONObject();
       HttpResponse put = new HttpResponse(putResponse.toJSONString(), HttpURLConnection.HTTP_CREATED);
       return put;
-    }
     
   }
 
