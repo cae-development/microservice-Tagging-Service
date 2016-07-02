@@ -145,7 +145,20 @@ public class Tagging extends Service {
   })
   @ApiOperation(value = "getTags", notes = " ")
   public HttpResponse getTags(@PathParam("id") String id) {
-
+    Connection conn = null;
+    try {
+        conn = dbm.getConnection();
+        PreparedStatement statement = conn.prepareStatement("Select * from comments where imgID='?' limit 10"); 
+        statement.setInt(1,Integer.parseInt(id));
+        ResultSet result = statement.executeQuery();
+        while (result.next()) { 
+            JSONObject commentJson = new JSONObject(); 
+            commentJson.put("id",result.getInt("id")); 
+            commentJson.put("text",result.getString("comment"));
+            array.add(commentJson);
+        }
+        commentsJson.put("comments", array);
+        conn.close();
     // tags
     boolean tags_condition = true;
     if(tags_condition) {
