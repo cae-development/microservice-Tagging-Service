@@ -10,7 +10,14 @@ CREATE TABLE `cae-schema`.`comments` (
   imgId int ,
   id int NOT NULL AUTO_INCREMENT ,
   comment text ,
-  timestamp datetime NOT NULL DEFAULT NOW(),
+CONSTRAINT id_PK PRIMARY KEY (id)
+);
+--
+-- Table structure for table tags.
+--
+CREATE TABLE `cae-schema`.`tags` (
+  imgId int ,
+  id int ,
 CONSTRAINT id_PK PRIMARY KEY (id)
 );
 
