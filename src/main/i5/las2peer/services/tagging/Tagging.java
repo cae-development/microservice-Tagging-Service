@@ -88,7 +88,7 @@ public class Tagging extends Service {
    * 
    * putTag
    * 
-   *
+   * @param id a String 
    * 
    * @return HttpResponse  
    * 
@@ -102,7 +102,7 @@ public class Tagging extends Service {
        @ApiResponse(code = HttpURLConnection.HTTP_INTERNAL_ERROR, message = "error")
   })
   @ApiOperation(value = "putTag", notes = " ")
-  public HttpResponse putTag() {
+  public HttpResponse putTag(@PathParam("id") String id) {
 
     // put
     boolean put_condition = true;

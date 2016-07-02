@@ -109,7 +109,7 @@ public class TaggingTest {
     MiniClient c = new MiniClient();
     c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
     try {
-
+      String id = "initialized";
       c.setLogin(Long.toString(testAgent.getId()), testPass);
       @SuppressWarnings("unchecked")
       ClientResponse result = c.sendRequest("PUT", mainPath + "/tags/{id}", "",
