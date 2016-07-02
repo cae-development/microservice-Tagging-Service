@@ -17,7 +17,7 @@ CONSTRAINT id_PK PRIMARY KEY (id)
 --
 CREATE TABLE `cae-schema`.`tags` (
   imgId int ,
-  id int ,
+  id int NOT NULL AUTO_INCREMENT ,
 CONSTRAINT id_PK PRIMARY KEY (id)
 );
 
