@@ -86,6 +86,43 @@ public class Tagging extends Service {
 
   /**
    * 
+   * putTag
+   * 
+   *
+   * 
+   * @return HttpResponse  
+   * 
+   */
+  @PUT
+  @Path("/tags/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_CREATED, message = "put"),
+       @ApiResponse(code = HttpURLConnection.HTTP_INTERNAL_ERROR, message = "error")
+  })
+  @ApiOperation(value = "putTag", notes = " ")
+  public HttpResponse putTag() {
+
+    // put
+    boolean put_condition = true;
+    if(put_condition) {
+      JSONObject putResponse = new JSONObject();
+      HttpResponse put = new HttpResponse(putResponse.toJSONString(), HttpURLConnection.HTTP_CREATED);
+      return put;
+    }
+    // error
+    boolean error_condition = true;
+    if(error_condition) {
+      String errorResponse = "Some String";
+      HttpResponse error = new HttpResponse(errorResponse, HttpURLConnection.HTTP_INTERNAL_ERROR);
+      return error;
+    }
+    return null;
+  }
+
+  /**
+   * 
    * putComment
    * 
    * @param comment a JSONObject 
