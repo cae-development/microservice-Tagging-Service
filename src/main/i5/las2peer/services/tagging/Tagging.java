@@ -236,7 +236,7 @@ public class Tagging extends Service {
     Connection conn = null;
     try {
         conn = dbm.getConnection();
-        PreparedStatement statement = conn.prepareStatement("Select * from comments where imgID=? limit 10"); 
+        PreparedStatement statement = conn.prepareStatement("Select * from comments where imgID=? Order By id DESC"); 
         statement.setInt(1,Integer.parseInt(id));
         ResultSet result = statement.executeQuery();
         while (result.next()) { 
