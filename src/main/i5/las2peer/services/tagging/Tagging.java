@@ -109,7 +109,7 @@ public class Tagging extends Service {
     try{ 
         conn = dbm.getConnection();
         PreparedStatement statement = conn.prepareStatement("Insert into tags (name,imgId) Values (?,?);"); 
-        statement.setString(1,(String) comment_JSON.get("name")); 
+        statement.setString(1,(String) tag_JSON.get("name")); 
         statement.setInt(1,Integer.parseInt(id));
         statement.executeUpdate();
         conn.close();  
